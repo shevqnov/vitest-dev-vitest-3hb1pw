@@ -10,4 +10,8 @@ describe('merge function test', () => {
   it('should return sorted result list of numbers', () => {
     expect(merge(exampleListA, exampleListB)).toStrictEqual(exampleResultList);
   });
+
+  it('should return empty result', () => {
+    expect(merge([], [])).toStrictEqual([]);
+  });
 });

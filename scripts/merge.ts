@@ -3,15 +3,15 @@ export function merge(
   bl: number[],
   result: number[] = []
 ): number[] {
-  const [ah, ...ar] = al;
-  const [bh, ...br] = bl;
+  const [ah, ...at] = al;
+  const [bh, ...bt] = bl;
 
   if (ah === undefined || bh === undefined) return result.concat(al, bl);
 
   if (ah < bh) {
-    return merge(ar, bl, [...result, ah]);
+    return merge(at, bl, [...result, ah]);
   } else if (bh < ah) {
-    return merge(al, br, [...result, bh]);
+    return merge(al, bt, [...result, bh]);
   }
-  return merge(ar, br, [...result, ah, bh]);
+  return merge(at, bt, [...result, ah, bh]);
 }
