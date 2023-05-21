@@ -6,7 +6,7 @@ export function merge(
   const [ah, ...at] = al;
   const [bh, ...bt] = bl;
 
-  // If one of the lists is empty, numbers in another garanteed grather then last result number,
+  // If one of the lists is empty, numbers in another garanteed greater then last result number,
   // so we can just concat it!
   if (ah === undefined || bh === undefined) return result.concat(al, bl);
 
@@ -14,8 +14,9 @@ export function merge(
   // a head goes to result.
   if (ah < bh) {
     return merge(at, bl, [...result, ah]);
-    // Otherwise:
-  } else if (bh < ah) {
+  }
+  // Otherwise:
+  if (bh < ah) {
     return merge(al, bt, [...result, bh]);
   }
   // And if heads is equal
